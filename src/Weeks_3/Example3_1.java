@@ -230,7 +230,7 @@ public class Example3_1 extends javax.swing.JFrame {
     // ເປັນການຍົກເລີກ
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
-        String msg = "<html><h3 style=\" font-family: Saysettha OT; font-weight: none\">ຕ້ອງການຍົກເລີກແທ້ ຫຼື ບໍ່</h3></html>";
+        String msg = "<html><h3 style=\" font-family: Saysettha OT; font-weight: none\">ທ່ານຕ້ອງການຍົກເລີກແທ້ ຫຼື ບໍ່</h3></html>";
           int data = JOptionPane.showConfirmDialog(rootPane, msg, "ຢືນຢັນ", JOptionPane.OK_CANCEL_OPTION);
           
           if(data != 0) {
