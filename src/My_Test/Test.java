@@ -20,10 +20,10 @@ public class Test extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtSale = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
         txtSalary = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCalculation = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 0));
@@ -49,20 +49,25 @@ public class Test extends javax.swing.JFrame {
                 txtSaleActionPerformed(evt);
             }
         });
+        txtSale.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSaleKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtSale, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 200, -1));
 
-        jTextField2.setFont(new java.awt.Font("Saysettha OT", 0, 14)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtName.setFont(new java.awt.Font("Saysettha OT", 0, 14)); // NOI18N
+        txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtNameActionPerformed(evt);
             }
         });
-        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField2KeyTyped(evt);
+                txtNameKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 200, -1));
+        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 200, -1));
 
         txtSalary.setFont(new java.awt.Font("Saysettha OT", 0, 14)); // NOI18N
         txtSalary.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -82,15 +87,15 @@ public class Test extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(0, 204, 51));
-        jButton2.setFont(new java.awt.Font("Saysettha OT", 0, 18)); // NOI18N
-        jButton2.setText("ຄຳນວນ");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCalculation.setBackground(new java.awt.Color(0, 204, 51));
+        btnCalculation.setFont(new java.awt.Font("Saysettha OT", 0, 18)); // NOI18N
+        btnCalculation.setText("ຄຳນວນ");
+        btnCalculation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCalculationActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
+        jPanel1.add(btnCalculation, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,34 +115,54 @@ public class Test extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCalculationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculationActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCalculationActionPerformed
 
     private void txtSaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSaleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSaleActionPerformed
 
-    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+    private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2KeyTyped
+    }//GEN-LAST:event_txtNameKeyTyped
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtNameActionPerformed
 
     
     private void txtSalaryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalaryKeyTyped
 
-        char pree = evt.getKeyChar();
-
-    if(!(Character.isDigit(pree) || pree == KeyEvent.VK_BACK_SPACE)){
+        char pree = evt.getKeyChar(); // ໃຊ້ເພື່ອດຶງອັກສອນທີ່ພິມລະຫວ່າງເຫດການສະເພາະ
+    if(!(Character.isDigit(pree) || pree == KeyEvent.VK_BACK_SPACE || pree == KeyEvent.VK_ENTER)){
         String message = "<html><h3 style=\" font-family: Saysettha OT; font-weight: none\">ກະລຸນາປ້ອນຕົວເລກເທົ່ານັ້ນ</h3></html>";
         JOptionPane.showMessageDialog(rootPane, message,"error",JOptionPane.ERROR_MESSAGE);
-        getToolkit().beep();
-        evt.consume();
+        getToolkit().beep();  // ເຮັດໜ້າທີ່ສົ່ງສຽງດັງ ດິງໆໆ....
+        evt.consume(); // ປ້ອງກັນອັກສອນທີ່ພິມລົງໃນບ໋ອກ
     }
+    
+    // ເຮັດໜ້າທີ່ໃນການກວດສອບອັກສອນທີ່ພິມເປັນ Enter ຫຼື ບໍ່ ຖ້າແມ່ນຈະສະລັບໄປຫາ txtSale
+    if(pree == KeyEvent.VK_ENTER) {
+        txtSale.requestFocus();
+    }
+    
     }//GEN-LAST:event_txtSalaryKeyTyped
+
+    private void txtSaleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSaleKeyTyped
+           char newpree = evt.getKeyChar();
+    if(!(Character.isDigit(newpree) || newpree == KeyEvent.VK_BACK_SPACE || newpree == KeyEvent.VK_ENTER)){
+        String message = "<html><h3 style=\" font-family: Saysettha OT; font-weight: none\">ກະລຸນາປ້ອນຕົວເລກເທົ່ານັ້ນ</h3></html>";
+        JOptionPane.showMessageDialog(rootPane, message,"error",JOptionPane.ERROR_MESSAGE);
+        getToolkit().beep();  // ເຮັດໜ້າທີ່ສົ່ງສຽງດັງ ດິງໆໆ....
+        evt.consume(); // ປ້ອງກັນອັກສອນທີ່ພິມລົງໃນບ໋ອກ
+    }
+    
+    // ເຮັດໜ້າທີ່ໃນການກວດສອບອັກສອນທີ່ພິມເປັນ Enter ຫຼື ບໍ່ ຖ້າແມ່ນຈະສະລັບໄປຫາ btnCalculation
+    if(newpree == KeyEvent.VK_ENTER) {
+        btnCalculation.doClick();
+    }
+    }//GEN-LAST:event_txtSaleKeyTyped
 
     
     
@@ -151,13 +176,13 @@ public class Test extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalculation;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSalary;
     private javax.swing.JTextField txtSale;
     // End of variables declaration//GEN-END:variables
