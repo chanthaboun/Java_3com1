@@ -169,13 +169,14 @@ public class Example3_1 extends javax.swing.JFrame {
     
 //    ພາກສວ່ນຂອງການແປງເລກໃຫ້ຈຳນວນເງິນເດືອນພື້ນຖານ
     private void txtSalaryKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalaryKeyReleased
-        // TODO add your handling code here: ກວດສອບກໍລະນີບໍ່ມີຄ່າ
+        // ກວດສອບກໍລະນີບໍ່ມີຄ່າ
         if (txtSalary.getText().equals("")) {
             return;
         }
         txtSalary.setText(NumberComma.stringPaserCommafy(txtSalary.getText().replace(",", "")));
     }//GEN-LAST:event_txtSalaryKeyReleased
 
+    
     // ພາກສວ່ນຂອງການແປງເລກໃຫ້ຈຳນວນຍອດຂາຍ
     private void txtSaleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSaleKeyReleased
         if (txtSale.getText().equals("")) {
@@ -184,6 +185,8 @@ public class Example3_1 extends javax.swing.JFrame {
         txtSale.setText(NumberComma.stringPaserCommafy(txtSale.getText().replace(",", "")));
     }//GEN-LAST:event_txtSaleKeyReleased
 
+    
+    
     
     
     
@@ -229,7 +232,7 @@ public class Example3_1 extends javax.swing.JFrame {
     
     // ເປັນການຍົກເລີກ
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        // TODO add your handling code here:
+        
         String msg = "<html><h3 style=\" font-family: Saysettha OT; font-weight: none\">ທ່ານຕ້ອງການຍົກເລີກແທ້ ຫຼື ບໍ່</h3></html>";
           int data = JOptionPane.showConfirmDialog(rootPane, msg, "ຢືນຢັນ", JOptionPane.OK_CANCEL_OPTION);
           
@@ -242,6 +245,10 @@ public class Example3_1 extends javax.swing.JFrame {
           txtDisplay.setText("");
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    
+    
+    
+    
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
